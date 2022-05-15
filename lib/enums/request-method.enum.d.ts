@@ -5,4 +5,3 @@ export declare const enum RequestMethod {
     DELETE = "delete",
     PATCH = "patch"
 }
-//# sourceMappingURL=request-method.enum.d.ts.map

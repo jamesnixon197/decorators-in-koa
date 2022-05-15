@@ -7,4 +7,3 @@ export declare class RouterCollection implements IRouterCollection {
     private setupSingleRoute;
     pushRoute(routerSettings: RouterSettings): void;
 }
-//# sourceMappingURL=index.d.ts.map

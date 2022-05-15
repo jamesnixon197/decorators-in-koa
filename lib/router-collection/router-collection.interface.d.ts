@@ -11,4 +11,3 @@ export interface IRouterCollection {
     setupRoutes: () => Router;
     pushRoute: ({}: RouterSettings) => void;
 }
-//# sourceMappingURL=router-collection.interface.d.ts.map

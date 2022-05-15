@@ -6,4 +6,3 @@ export declare const RequestMethods: {
     Delete: (path?: string | undefined) => (target: IRouterCollection, {}: {}, descriptor: TypedPropertyDescriptor<any>) => void;
     Patch: (path?: string | undefined) => (target: IRouterCollection, {}: {}, descriptor: TypedPropertyDescriptor<any>) => void;
 };
-//# sourceMappingURL=request-methods.decorator.d.ts.map
