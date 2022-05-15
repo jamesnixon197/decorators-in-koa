@@ -16,7 +16,7 @@ const setupServer = (controllerRoutes: IMiddleware) => {
   return http.createServer(app.callback());
 };
 
-describe('koa-decorator-router', () => {
+describe('koa-and-decorators', () => {
   let server: Server;
   let routerMiddleware: Router;
 

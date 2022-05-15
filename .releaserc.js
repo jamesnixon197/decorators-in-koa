@@ -1,8 +1,8 @@
 module.exports = {
-  repositoryUrl: 'https://github.com/jamesnixon197/koa-decorator-router.git',
+  repositoryUrl: 'https://github.com/jamesnixon197/koa-and-decorators.git',
   debug: true,
   plugins: [
-    // '@semantic-release/commit-analyzer',
+    '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
     [

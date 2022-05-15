@@ -1,9 +1,9 @@
 {
-  "name": "koa-decorator-router",
+  "name": "koa-and-decorators",
   "version": "1.0.0",
-  "description": "Koa router decorator methods",
+  "description": "Koa router but with decorator methods",
   "main": "dist/index.js",
-  "repository": "git@github.com:jamesnixon197/koa-decorator-router.git",
+  "repository": "git@github.com:jamesnixon197/koa-and-decorators.git",
   "author": "James Nixon <james.nixon@truepill.com>",
   "license": "MIT",
   "scripts": {
