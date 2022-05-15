@@ -1,32 +1,77 @@
-on: "push"
-
-name: Code verification
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
 
 jobs:
-  setupAndTest:
-    name: Run all tests & lint the code
+  lint:
+    name: Lint code
     runs-on: ubuntu-latest
     env:
       node-version: '16.15.0'
     steps:
-    - uses: actions/checkout@f90c7b395dac7c5a277c1a6d93d5057c1cddb74e
-    - uses: actions/cache@v2
-      name: Cache NPM packages
-      id: cache-npm
-      with:
-        path: |
-          **/node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: ${{ runner.os }}-node-
-    - uses: actions/setup-node@v1
-      with:
-        node-version: ${{env.node_version}}
-    - name: Set up node CI environment
-      run: yarn --immutable
-      if: steps.cache-npm.outputs.cache-hit != 'true'
-    - name: Run Unit Test Suite
-      run: yarn run test:unit
-    - name: Lint code
-      run: yarn run lint
-    - name: Run integration tests
-      run: yarn run test:integration
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        name: Cache NPM packages
+        id: cache-npm
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{env.node_version}}
+      - name: Set up node CI environment
+        run: yarn --immutable
+        if: steps.cache-npm.outputs.cache-hit != 'true'
+      - name: Lint code
+        run: yarn run lint
+
+  tests:
+    name: Run all tests
+    runs-on: ubuntu-latest
+    env:
+      node-version: '16.15.0'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        name: Cache NPM packages
+        id: cache-npm
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{env.node_version}}
+      - name: Set up node CI environment
+        run: yarn --immutable
+        if: steps.cache-npm.outputs.cache-hit != 'true'
+      - name: Run Unit Test Suite
+        run: yarn run test:unit
+      - name: Run integration tests
+        run: yarn run test:integration
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - test
+    env:
+      node-version: '16.15.0'
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{env.node_version}}
+      - uses: codfish/semantic-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
