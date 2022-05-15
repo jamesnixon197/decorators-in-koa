@@ -8,7 +8,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['dist/**/*.js', 'package.json', 'yarn.lock'],
+        assets: ['lib/**/*.js', 'package.json', 'yarn.lock'],
         message: 'chore(release): ${nextRelease.version}',
       },
     ],

@@ -1,15 +1,15 @@
 import { Context } from 'koa';
+import {
+  Controller,
+  RouterCollection,
+  RequestMethods,
+} from 'decorators-in-koa';
 
 @Controller('hello-world')
-export class AuthController extends RouterCollection {
+export class HelloWorldController extends RouterCollection {
   @RequestMethods.Get()
-  searchBySku(context: Context): void {
+  printHelloWorld(context: Context): void {
     context.body = 'Hello World';
     context.res.statusCode = 200;
-  }
-
-  @RequestMethods.Post('post')
-  getHealthCheck(): void {
-    console.log('hit endpoint');
   }
 }
