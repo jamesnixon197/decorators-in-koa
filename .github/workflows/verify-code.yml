@@ -23,7 +23,7 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+          restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v2
         with:
           node-version: ${{env.node_version}}
@@ -47,7 +47,7 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+          restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v2
         with:
           node-version: ${{env.node_version}}

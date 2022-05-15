@@ -1,8 +1,6 @@
 {
     "release": {
-        "branches": [
-          "main"
-        ]
+        "branches": ["main"]
     },
     "repositoryUrl": "https://github.com/jamesnixon197/koa-decorator-router.git",
     "debug": true,
