@@ -16,7 +16,10 @@ class RouterCollection {
         return router;
     }
     setupSingleRoute(routeSettings, router) {
-        router[routeSettings.requestMethod](routeSettings.path, routeSettings.callbackFunction);
+        const { requestMethod } = routeSettings;
+        if (!router[requestMethod])
+            throw new Error(`Unable to set up a route with the request method '${requestMethod}'`);
+        router[requestMethod](routeSettings.path, routeSettings.callbackFunction);
     }
     pushRoute(routerSettings) {
         if (!this.routerSettings)

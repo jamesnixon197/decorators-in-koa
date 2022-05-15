@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Controller = exports.RequestMethods = exports.RouterCollection = exports.setupControllerRoutes = void 0;
-var controller_1 = require("./controller");
-Object.defineProperty(exports, "setupControllerRoutes", { enumerable: true, get: function () { return controller_1.setupControllerRoutes; } });
+var controller_routes_1 = require("./controller-routes");
+Object.defineProperty(exports, "setupControllerRoutes", { enumerable: true, get: function () { return controller_routes_1.setupControllerRoutes; } });
 var router_collection_1 = require("./router-collection");
 Object.defineProperty(exports, "RouterCollection", { enumerable: true, get: function () { return router_collection_1.RouterCollection; } });
 var request_methods_decorator_1 = require("./decorators/request-methods.decorator");

@@ -6,7 +6,7 @@ import http, { Server } from 'http';
 
 import { setupControllerRoutes } from '../src/index';
 
-import { ProductController, UserController } from './fakeControllers';
+import { ProductController, UserController } from './controllers';
 
 const setupServer = (controllerRoutes: IMiddleware) => {
   const app = new Koa();

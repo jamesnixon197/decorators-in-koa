@@ -12,6 +12,6 @@ const setupControllerRoutes = (routerControllers) => {
         const controllerRoutes = controller.setupRoutes();
         controllerRouter.use(`/${controller.path}`, controllerRoutes.routes());
     });
-    return controllerRouter.routes();
+    return controllerRouter;
 };
 exports.setupControllerRoutes = setupControllerRoutes;
