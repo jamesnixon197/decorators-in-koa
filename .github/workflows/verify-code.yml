@@ -33,7 +33,7 @@ jobs:
       - name: Lint code
         run: yarn run lint
 
-  tests:
+  test:
     name: Run all tests
     runs-on: ubuntu-latest
     env:
