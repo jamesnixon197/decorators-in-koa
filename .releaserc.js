@@ -1,6 +1,7 @@
 module.exports = {
   repositoryUrl: 'https://github.com/jamesnixon197/koa-and-decorators.git',
   debug: true,
+  branches: ["main"],
   plugins: [
     ['@semantic-release/commit-analyzer', {
       "releaseRules": [
