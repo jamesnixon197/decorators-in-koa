@@ -12,9 +12,12 @@ There aren't any extra steps when it comes to installing the package. It's just 
 
 ## Usage
 
-`decorators-in-koa` makes building controllers and loading their routes a much simpler process. If you want an example of how it would work in a real-world scenario check out the `samples` folder (Insert GitHub link).
+`decorators-in-koa` makes building controllers and loading their routes a much simpler process. If you want an example of how it would work in a real-world scenario check out the `samples` folder [here](https://github.com/jamesnixon197/decorators-in-koa/tree/main/samples/hello-world).
 
 ### Example Controller
+
+To define a controller, you need to first define the controller path using
+
 ```
 import { Context } from 'koa';
 import {

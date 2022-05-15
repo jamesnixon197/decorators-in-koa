@@ -27,8 +27,7 @@
     "koa-router": "^10.1.1"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "tag": "latest"
+    "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.3.0",
