@@ -27,5 +27,6 @@ module.exports = {
     'new-cap': 'off',
     'class-methods-use-this': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+    'import/no-extraneous-dependencies': 'off',
   },
 };

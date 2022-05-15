@@ -1,10 +1,10 @@
-import Router, { IMiddleware } from 'koa-router';
+import Router from 'koa-router';
 
 import { IRouterCollection } from '../router-collection/router-collection.interface';
 
 export const setupControllerRoutes = (
   routerControllers: { new (...args: any[]): IRouterCollection }[],
-): IMiddleware => {
+): Router => {
   const controllerRouter = new Router();
 
   routerControllers.forEach((controllerClass) => {
@@ -13,5 +13,5 @@ export const setupControllerRoutes = (
     controllerRouter.use(`/${controller.path}`, controllerRoutes.routes());
   });
 
-  return controllerRouter.routes();
+  return controllerRouter;
 };
