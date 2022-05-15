@@ -8,9 +8,11 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
     "lint": "eslint --ext ts ./src",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "test:unit": "jest src",
+    "test:integration": "jest --testPathPattern=integration.spec.ts$ tests"
   },
   "dependencies": {
     "koa-router": "^10.1.1"

@@ -1,7 +1,7 @@
 import Router from 'koa-router';
 
 import { setupControllerRoutes } from '.';
-import { UserController } from '../../tests/fakeControllers/users.controller';
+import { UserController } from '../../tests/controllers';
 
 jest.mock('koa-router');
 
