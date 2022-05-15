@@ -1,5 +1,5 @@
 # decorators-in-koa
-A Koa router that runs uses decorators to build out API routes.
+A Koa router that uses TypeScript decorators to cleanly build out API routes.
 
 ## Installation
 There aren't any extra steps when it comes to installing the package. It's just a case of installing the package, as you would with any other JS package.
