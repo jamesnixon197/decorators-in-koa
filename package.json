@@ -1,6 +1,6 @@
 {
   "name": "decorators-in-koa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Koa router but with decorator methods",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
