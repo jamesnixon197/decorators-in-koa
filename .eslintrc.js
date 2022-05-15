@@ -1,0 +1,31 @@
+module.exports = {
+  env: {
+    es2021: true,
+    node: true,
+    jest: true,
+  },
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint', 'prettier'],
+  rules: {
+    'no-use-before-define': 'off',
+    'import/extensions': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'no-undef': 'off',
+    'no-underscore-dangle': ['error', { allowAfterThis: true }],
+    'no-empty-pattern': 'off',
+    'max-classes-per-file': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    'no-unused-vars': 'off',
+    'new-cap': 'off',
+    'class-methods-use-this': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
+  },
+};
