@@ -28,5 +28,5 @@ jobs:
       run: yarn run test:unit
     - name: Lint code
       run: yarn run lint
-    - name: Run integrationtests
+    - name: Run integration tests
       run: yarn run test:integration
