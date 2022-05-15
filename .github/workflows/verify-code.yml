@@ -70,9 +70,20 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        name: Cache NPM packages
+        id: cache-npm
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v2
         with:
           node-version: ${{env.node_version}}
+      - name: Set up node CI environment
+        run: yarn --immutable
+        if: steps.cache-npm.outputs.cache-hit != 'true'
       - name: Release built code
         run: yarn run release
         env:
